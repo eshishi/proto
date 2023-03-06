@@ -1,0 +1,20 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+
+message Data{
+  google.protobuf.Timestamp timestamp = 1;
+  float xangle  = 2;
+  float yangle = 3;
+  float zangle = 4;
+}
+
+message RangeResuest{
+  google.protobuf.Timestamp startstamp = 1;
+  google.protobuf.Timestamp endstamp = 2;
+}
+
+message RengeResponse{
+  repeated Data data = 1;
+}
+
+
