@@ -2,9 +2,7 @@
 
 ## install protoc
 
-[windows](github.com/google/protobuf/releases)
-or
-`brew install protobuf`
+[windows](github.com/google/protobuf/releases) or `brew install protobuf`
 
 ```
 go install -v github.com/stormcat24/protodep@v0.1.7
