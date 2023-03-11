@@ -14,6 +14,9 @@ MESSAGE DATA{
   ANGLES BACK = 3;
   ANGLES WAIST = 4;
 }
+
+message RangeRequest{
+  string uid = 3;
   google.protobuf.Timestamp startstamp = 1;
   google.protobuf.Timestamp endstamp = 2;
 }
