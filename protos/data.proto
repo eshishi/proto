@@ -9,7 +9,7 @@ message Angles{
 }
 
 message Data{
-  string user_id = 5;
+  string uid = 5;
   google.protobuf.Timestamp timestamp = 1;
   Angles head = 2;
   Angles back = 3;
