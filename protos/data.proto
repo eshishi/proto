@@ -21,8 +21,8 @@ message RangeRequest{
   google.protobuf.Timestamp endstamp = 2;
 }
 
-message RengeResponse{
-  repeated Data data = 1;
+message WatchRequest{
+  string uid = 1;
 }
 
 
