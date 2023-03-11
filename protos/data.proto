@@ -1,14 +1,19 @@
 syntax = "proto3";
 import "google/protobuf/timestamp.proto";
 
-message Data{
-  google.protobuf.Timestamp timestamp = 1;
-  float xangle  = 2;
-  float yangle = 3;
-  float zangle = 4;
+MESSAGE ANGLES{
+  FLOAT XANGLE  = 2;
+  FLOAT YANGLE = 3;
+  FLOAT ZANGLE = 4;
 }
 
-message RangeResuest{
+MESSAGE DATA{
+  STRING USER_ID = 5;
+  GOOGLE.PROTOBUF.TIMESTAMP TIMESTAMP = 1;
+  ANGLES HEAD = 2;
+  ANGLES BACK = 3;
+  ANGLES WAIST = 4;
+}
   google.protobuf.Timestamp startstamp = 1;
   google.protobuf.Timestamp endstamp = 2;
 }
