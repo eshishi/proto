@@ -19,7 +19,7 @@ message Data{
 message RangeRequest{
   string uid = 3;
   google.protobuf.Timestamp startstamp = 1;
-  google.protobuf.Timestamp endstamp = 2;
+  optional google.protobuf.Timestamp endstamp = 2;
 }
 
 message WatchRequest{
