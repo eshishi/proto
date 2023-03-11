@@ -1,18 +1,19 @@
 syntax = "proto3";
+import "google/protobuf/empty.proto";
 import "google/protobuf/timestamp.proto";
 
-MESSAGE ANGLES{
-  FLOAT XANGLE  = 2;
-  FLOAT YANGLE = 3;
-  FLOAT ZANGLE = 4;
+message Angles{
+  float xangle  = 2;
+  float yangle = 3;
+  float zangle = 4;
 }
 
-MESSAGE DATA{
-  STRING USER_ID = 5;
-  GOOGLE.PROTOBUF.TIMESTAMP TIMESTAMP = 1;
-  ANGLES HEAD = 2;
-  ANGLES BACK = 3;
-  ANGLES WAIST = 4;
+message Data{
+  string user_id = 5;
+  google.protobuf.Timestamp timestamp = 1;
+  Angles head = 2;
+  Angles back = 3;
+  Angles waist = 4;
 }
 
 message RangeRequest{
@@ -25,4 +26,8 @@ message WatchRequest{
   string uid = 1;
 }
 
-
+service DataManage{
+  rpc PutData (Data) returns (google.protobuf.Empty);
+  rpc WatchData (WatchRequest) returns (stream Data);
+  rpc GetDataRange (RangeRequest) returns (stream Data);
+}
